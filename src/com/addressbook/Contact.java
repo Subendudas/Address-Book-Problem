@@ -24,5 +24,9 @@ public class Contact {
 			this.phone = phone;
 			this.email = email;
 		}
-
+		public String getFirstName() {
+			// TODO Auto-generated method stub
+			return firstName;
+		}
+		
 }

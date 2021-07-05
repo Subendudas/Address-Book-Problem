@@ -5,10 +5,11 @@ import java.util.Scanner;
 public class Address_Book
 {
 	public static void main(String[] args) {
+		Address_Book obj = new Address_Book(); 
 	System.out.println("WELCOME TO ADDRESS BOOK PROBLEM");
 		System.out.println("Create Contact");
 		addContact();
-		
+		obj.editContact();
 	}
 	static Scanner sc = new Scanner(System.in);
 	static List<Contact> list = new LinkedList<Contact>();
@@ -34,4 +35,20 @@ public class Address_Book
 		Contact obj = new Contact(firstName, lastName, address, city, state, zip, phone, email);
 		list.add(obj);
 	}
+
+	public static void editContact() {
+		// Scanner sc = new Scanner(System.in);
+		System.out.println("Enter First Name which you want to edit: ");
+		String firstName = sc.nextLine();
+		for (int i = 0; i < list.size(); i++) {
+			if (( list.get(i)).getFirstName().equalsIgnoreCase(firstName)) {
+				list.remove(i);
+				addContact();
+				System.out.println("Data Added Successfully.");
+			} else {
+				System.out.println("No data found in Address Book");
+			}
+		}
+	}
 }
+
