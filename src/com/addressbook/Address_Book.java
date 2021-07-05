@@ -1,44 +1,37 @@
 package com.addressbook;
+import java.util.List;
+import java.util.LinkedList;
 import java.util.Scanner;
 public class Address_Book
 {
 	public static void main(String[] args) {
-		Address_Book List = new Address_Book();
-		List.Entry();
-		List.readEntry();
+	System.out.println("WELCOME TO ADDRESS BOOK PROBLEM");
+		System.out.println("Create Contact");
+		addContact();
 		
 	}
-    Scanner sc = new Scanner(System.in);
-        private String first;
-        private String last;
-        private String address;
-        private String email;
-        private String city;
-        private String state;
-        private String phone;
-        private int zip;
-       
-        void Entry()
-        {
-            first = "Subendu";
-            last = "Das";
-            address = "Address";
-            city = "Bokaro";
-            state = "Jharkhand";
-            zip = 123456;
-            phone = "+91 9999999999";
-            email = "abc@mail.com";
-            
-        }
-        public void readEntry()
-        {
-            System.out.println("First Name: "+first );
-            System.out.println("Last Name: "+last );
-            System.out.println("Address: "+address );
-            System.out.println("City: "+city );
-            System.out.println("State: "+state );
-            System.out.println("Zip Code: "+zip );
-            System.out.println("Phone Number: "+phone );
-            System.out.println("Email: "+email );
-        }
-    }
+	static Scanner sc = new Scanner(System.in);
+	static List<Contact> list = new LinkedList<Contact>();
+	
+	public static void addContact() 
+	{
+		System.out.print("Enter Firts Name : ");
+		String firstName = sc.nextLine();
+		System.out.print("Enter your Last Name : ");
+		String lastName = sc.nextLine();
+		System.out.print("Enter your Address : ");
+		String address = sc.nextLine();
+		System.out.print("Enter your City : ");
+		String city = sc.nextLine();
+		System.out.print("Enter your State : ");
+		String state = sc.nextLine();
+		System.out.print("Enter your Zip code : ");
+		String zip = sc.nextLine();
+		System.out.print("Enter your PhoneNo : ");
+		String phone = sc.nextLine();
+		System.out.print("Enter your Email : ");
+		String email = sc.nextLine();
+		Contact obj = new Contact(firstName, lastName, address, city, state, zip, phone, email);
+		list.add(obj);
+	}
+}
